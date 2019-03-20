@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<script>
+    //面试题1:每三个一组
+    let str='123456789'
+    function f(arr,index) {
+        // let newIndex = 0;
+        let newArr = []
+        for(let i = 0; i < arr.length; i+=index){
+            newArr.push(arr.slice(i,i+index))
+        }
+        return newArr
+    }
+    console.log(f(str,3)
+    )
+
+    //时间格式
+    let dateTime = new Date()
+    let year = dateTime.getFullYear()
+    let month = dateTime.getMonth()
+    let day = dateTime.getDate()
+    let hours = dateTime.getHours()
+    let min = dateTime.getMinutes()
+    let s = dateTime.getSeconds()
+    console.log(`${year}-${month+1}-${day} ${hours}:${min}:${s}`)
+
+    //分割url获取各个部分
+    function getobj(url) {
+        var str = url.split('?')[1]
+        // console.log(url.split('?'))
+        var items=str.split('&')
+        var name, value, arr
+        var obj = {}
+        for (var i = 0; i<items.length; i++){
+            arr = items[i].split('=')
+            name = arr[0]
+            value = arr[1]
+            obj[name] = value
+
+        }
+        return obj
+    }
+
+    var getstr = getobj(url)
+    // console.log(getstr)
+
+
+
+</script>
+</body>
+
+</html>
